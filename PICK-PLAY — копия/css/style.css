@@ -1,0 +1,463 @@
+/* ======================================================
+   PICK&PLAY
+   Главный файл стилей
+====================================================== */
+
+
+/* ======================================================
+   СБРОС
+====================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+CSS
+html{
+    scroll-behavior:smooth;
+    background: #111;
+}
+
+body{
+    font-family:"Open Sans", sans-serif;
+    background:#111; 
+    color:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+
+/* ======================================================
+   CONTAINER
+====================================================== */
+
+.container{
+    width:min(1700px, 92%);
+    margin:0 auto;
+}
+
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:80px;
+
+    background:#111;
+
+    z-index:1000;
+}
+
+.header .container{
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+
+/* ======================================================
+   LOGO
+====================================================== */
+
+.logo{
+
+    display:flex;
+    flex-direction:column;
+
+    transition:.3s;
+}
+
+.logo h1{
+
+    font-size:56px;
+
+    font-weight:800;
+
+    line-height:1;
+
+    letter-spacing:1px;
+
+    color:#fff;
+}
+
+.logo span{
+
+    color:#f5a000;
+}
+
+.logo p{
+    margin-top:6px;
+    margin-left: 5px; 
+    color:#d7d7d7;
+    font-size:14px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+.logo:hover{
+
+    transform:scale(1.03);
+}
+
+
+/* ======================================================
+   NAVIGATION
+====================================================== */
+
+.navigation{
+    display:flex;
+    align-items:center;
+    gap:75px;
+}
+
+.navigation a{
+    position:relative;
+    font-size:20px;
+    font-weight:600;
+    color: #ffffff !important; 
+    transition:.25s;
+}
+
+.navigation a:hover{
+    color:#f5a000 !important;
+}
+
+.navigation a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#f5a000;
+    transition:.25s;
+}
+
+.navigation a:hover::after{
+    width:100%;
+}
+
+/* ======================================================
+   HERO
+====================================================== */
+
+.hero {
+    position: relative;
+    
+    height: 100vh; 
+    background-image: url("../images/home.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Затемнение */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.88) 0%,
+        rgba(0,0,0,.82) 25%,
+        rgba(0,0,0,.40) 45%,
+        rgba(0,0,0,0) 70%
+    );
+}
+
+
+/* Левая часть Hero */
+
+
+.hero-content{
+    position:absolute;
+    left:0;
+    top:45%; 
+    width:55%; 
+    transform:translateY(-50%);
+    display:flex;
+    justify-content:center;
+    z-index:2;
+}
+
+
+/* ======================================================
+   ТЕКСТ HERO
+====================================================== */
+
+/* ТЕКСТ HERO */
+.hero-text{
+    width:100%;
+    max-width:750px; 
+    display:flex;
+    flex-direction:column;
+    margin:0;
+}
+
+.hero-text h1{
+    display:flex;
+    flex-direction:column;
+
+    font-size:100px;
+    font-weight:800;
+    line-height:1;
+
+    margin-bottom:35px;
+}
+
+.hero-text .white{
+
+    color:#fff;
+}
+
+.hero-text .orange{
+
+    color:#f5a000;
+}
+
+.hero-text p{
+    font-size:24px;
+    line-height:1.5;
+    color: #ffffff;
+    
+   
+    margin: 0 0 0 45px !important;   
+    
+    padding: 0 !important;
+    text-align: left;       
+}
+/* ======================================================
+   КАТЕГОРИИ (Смещаем иконки ровно на линию)
+====================================================== */
+
+.categories {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 220px;                 
+    background: transparent;       
+    backdrop-filter: none;         
+    box-shadow: none;              
+    z-index: 20;
+    display: flex;
+    align-items: center;           
+    justify-content: center;
+}
+
+.categories .container {
+    width: min(1700px, 92%);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories-grid {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;           
+    gap: 40px;
+    width: 100%;
+    
+    
+    transform: translateY(-30px); 
+}
+
+CSS
+.category-card h3 {
+    
+    margin-top: -35px !important;  
+    
+    color: #ffffff;                
+    font-size: 19px;               
+    font-weight: 700;              
+    letter-spacing: 0.5px;         
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); 
+    transition: .3s;
+}
+
+.category-card img {
+    height: 115px;                 
+    width: auto;                   
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    transition: .3s;
+}
+
+.category-card h3 {
+    margin-top: 14px;              
+    color: #ffffff;                
+    font-size: 19px;               
+    font-weight: 700;              
+    letter-spacing: 0.5px;         
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Чуть усилили тень для читаемости */
+    transition: .3s;
+}
+
+/* Эффекты при наведении */
+.category-card:hover {
+    transform: translateY(-8px);   
+}
+
+.category-card:hover img {
+    transform: scale(1.06);
+}
+
+.category-card:hover h3 {
+    color: #f5a000;                
+}
+/* ======================================================
+   FOOTER
+====================================================== */
+.footer {
+    background: #111;
+    color: #555;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+/* ======================================================
+   ВНУТРЕННИЕ СТРАНИЦЫ (Каталог товаров)
+====================================================== */
+
+/* Контейнер страницы */
+.inner-page {
+    padding-top: 140px; /* Отступ сверху, чтобы шапка не перекрывала текст */
+    padding-bottom: 80px;
+    background: #111; 
+    min-height: calc(100vh - 80px); /* Страница занимает всю высоту минус шапка */
+}
+
+/* Заголовок страницы */
+.page-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+}
+
+.page-header h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.page-header p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cccccc; /* Светло-серый цвет для читаемости */
+}
+
+/* Сетка карточек товаров */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: start; 
+}
+
+/* Карточка отдельного товара */
+.catalog-card {
+    width: 300px;
+    background: #1a1a1a; /* Темно-серый фон карточки */
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: .3s;
+    border: 1px solid #2a2a2a; /* Едва заметная рамка */
+}
+
+/* Эффект при наведении на карточку */
+.catalog-card:hover {
+    transform: translateY(-10px);
+    border-color: #f5a000;
+    box-shadow: 0 10px 30px rgba(245, 160, 0, 0.1); /* Легкое оранжевое свечение */
+}
+
+.catalog-card img {
+    
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto 25px auto;
+    display: block;
+    transition: .3s;
+}
+
+.catalog-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Название гитары */
+.catalog-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    transition: .3s;
+}
+
+.catalog-card:hover h4 {
+    color: #f5a000;
+}
+
+/* Цена */
+.catalog-card .price {
+    font-size: 26px;
+    font-weight: 700;
+    color: #f5a000;
+}
+/* ======================================================
+   АНИМАЦИЯ ПЛАВНОГО ПОЯВЛЕНИЯ (FADE IN)
+====================================================== */
+
+.fade-in {
+    opacity: 0; 
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
